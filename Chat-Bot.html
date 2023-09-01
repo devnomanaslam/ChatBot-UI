@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <style>
+        /* header {
+            background-color: #222;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+        } */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        html,
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,'roboto';
+        }
+
+        .container {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatListContainer {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .chatContainer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .chatContainer.sent {
+            justify-content: flex-end;
+        }
+
+        .chatContainer.received {
+            justify-content: flex-start;
+        }
+
+        .chatContainer img {
+            vertical-align: middle;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .chatContainer p {
+            background-color: #f1f0f0;
+            padding: 10px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .chatContainer.sent p {
+            background-color: #2979FF;
+            color: #fff;
+        }
+
+        .chatContainer span {
+            font-size: 12px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #888;
+        }
+
+        .chatContainer.sent .time-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .chatbot-form {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f1f0f0;
+            position: fixed;
+            width: -webkit-fill-available;
+            margin: 0 0 0 -8px;
+            bottom: 0;
+        }
+
+        .chatbot-form input[type="text"] {
+            flex: 1;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .chatbot-form button {
+            background-color: #2979FF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-bottom: -15px;
+            max-width: 50%;
+        }
+
+        .sent p {
+            border-radius: 15px 15px 2px 15px;
+        }
+
+        .received p {
+            border-radius: 15px 15px 15px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Chat With Friends</h1>
+    </header>
+    <div style="height: 60px;"></div>
+
+    <div class="container">
+        <div class="chatListContainer">
+
+            <div class="chatContainer received">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>Hello, how can I help you today?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+            </div>
+
+            <div class="chatContainer sent">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>I need help with my account</p>
+                    <span class="time-left">11:05</span>
+                </div>
+            </div>
+            <div class="chatContainer  received">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>What seems to be the issue?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+            </div>
+
+            <div class="chatContainer sent">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>My account is locked out and I can't log in.</p>
+                    <span class="time-left">11:05</span>
+                </div>
+            </div>
+            <div class="chatContainer  received">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>I can help you with that. What is your username?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+            </div>
+
+            <div class="chatContainer sent">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>My username is @noman</p>
+                    <span class="time-left">11:05</span>
+                </div>
+            </div>
+            <div class="chatContainer  received">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>I can help you with that. What is your username?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+            </div>
+
+            <div class="chatContainer sent">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>My username is @noman</p>
+                    <span class="time-left">11:05</span>
+                </div>
+            </div>
+            <div class="chatContainer  received">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>I can help you with that. What is your username?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+            </div>
+
+            <div class="chatContainer sent">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>My username is @noman</p>
+                    <span class="time-left">11:05</span>
+                </div>
+            </div>
+            <div class="chatContainer  received">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, tempore. Accusantium at
+                        quidem, mollitia odit dicta nemo veritatis sapiente incidunt nam quis adipisci fuga, quisquam
+                        excepturi? Rem sint nisi aut!</p>
+                    <span class="time-right">11:00</span>
+                </div>
+            </div>
+
+            <div class="chatContainer sent">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/30" alt="Avatar">
+                </div>
+                <div class="message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam blanditiis iusto quidem
+                        voluptates nesciunt illo laborum, laudantium natus eveniet ullam animi eius obcaecati
+                        praesentium nisi optio aliquam eaque pariatur accusamus?</p>
+                    <span class="time-left">11:05</span>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </div>
+        <div class="chatbot-form">
+            <input type="text" placeholder="Type your message...">
+            <button>Send</button>
+        </div>
+    </div>
+
+    <script>
+//         const received = document.getElementById("received");
+
+//         if (!localStorage.getItem("hasVisited")) {
+//             const div = document.createElement("div");
+//             div.classList.add("chatContainer", "received");
+//             div.innerHTML = `
+//     <div class="avatar">
+//       <img src="https://via.placeholder.com/30" alt="Avatar">
+//     </div>
+//     <div class="message">
+//       <p>Hello, how can I help you today?</p>
+//       <span class="time-right">11:00</span>
+//     </div>
+//   `;
+//             received.appendChild(div);
+
+//             localStorage.setItem("hasVisited", "true");
+//         }
+
+    </script>
+</body>
+
+</html>
